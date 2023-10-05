@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>數字乘以十倍</title>
+</head>
+<body>
+    <form method="post" action="/multiply_by_ten/"> <!-- 提交後會跳到上述的網址 -->
+        {% csrf_token %}  <!-- 用於保護網站免於請求偽造攻擊 -->
+        <label for="input_number">請輸入1到100之間的數字：</label>
+        <input type="number" id="input_number" name="input_number" min="1" max="100" required>
+        <input type="submit" value="提交">
+    </form>
+
+    {% if ans %}
+    <p>結果：{{ ans }}</p>
+    <p>結果：{{ result }}</p>
+    {% endif %}
+</body>
+</html>
